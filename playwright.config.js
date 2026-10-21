@@ -43,7 +43,7 @@ export default defineConfig({
     trace: 'off',
   },
   webServer: externalServer ? undefined : {
-    command: 'python tests/serve.py',
+    command: `${process.platform === 'win32' ? 'python' : 'python3'} tests/serve.py`,
     cwd: fileURLToPath(new URL('.', import.meta.url)),
     url: `${baseURL}/index.html`,
     reuseExistingServer: false,

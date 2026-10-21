@@ -1,0 +1,271 @@
+:root {
+    color-scheme: light;
+    --ink: #202629;
+    --teal: #08777b;
+    --line: #a5b5b5;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--teal);
+    text-underline-offset: 0.25em;
+}
+
+a:focus-visible,
+main:focus-visible {
+    outline: 3px solid var(--teal);
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 10;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    background: var(--teal);
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: none;
+}
+
+.site-header {
+    position: relative;
+    z-index: 5;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    width: min(100% - 2rem, 76rem);
+    margin-inline: auto;
+    padding-block: 0.5rem;
+}
+
+.logo img {
+    width: 6.25rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:active {
+    color: var(--teal);
+    text-decoration: underline;
+}
+
+.home {
+    background-image: url("image/bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.main,
+.about,
+.books {
+    width: min(100% - 2rem, 76rem);
+    margin-inline: auto;
+}
+
+.main {
+    display: grid;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 2.5rem;
+}
+
+.main_tag {
+    min-width: 0;
+    padding: 1rem;
+    background: #fff;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.4375rem);
+    line-height: 1.15;
+}
+
+h1 span {
+    color: var(--teal);
+}
+
+.main p {
+    max-width: 42ch;
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
+}
+
+.main_img img {
+    width: 100%;
+    max-width: 42rem;
+    margin-inline: auto;
+}
+
+.about {
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 3rem;
+}
+
+.about_image img {
+    width: 100%;
+    max-width: 34rem;
+    margin-inline: auto;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    line-height: 1.2;
+}
+
+.about_tag p {
+    max-width: 58ch;
+    margin-top: 1.25rem;
+}
+
+.books {
+    padding-block: 1rem 3rem;
+}
+
+.books > h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.books_box {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 1.5rem;
+}
+
+.books_card {
+    min-width: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    background: #fff;
+}
+
+.books_image {
+    width: 9.375rem;
+    height: 13.75rem;
+    margin: 0 auto 1.25rem;
+}
+
+.books_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.books_tag h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.35;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.book-meta {
+    margin-block: 0.25rem;
+    text-align: center;
+}
+
+.synopsis {
+    margin-top: 1rem;
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 38rem) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .books_box {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 52rem) {
+    html {
+        scroll-padding-top: 8.5rem;
+    }
+
+    .site-header {
+        position: sticky;
+        top: 0;
+    }
+
+    .main {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        gap: 2.5rem;
+        padding-block: 4rem;
+    }
+
+    .about {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 3rem;
+        padding-block: 4rem;
+    }
+
+    .books {
+        padding-bottom: 4rem;
+    }
+}
+
+@media (min-width: 70rem) {
+    .books_box {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

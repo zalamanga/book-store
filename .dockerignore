@@ -1,0 +1,8 @@
+**
+!Dockerfile
+!index.html
+!style.css
+!image/
+!image/**
+!docker/
+!docker/nginx.conf

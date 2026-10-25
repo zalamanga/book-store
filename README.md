@@ -1,5 +1,7 @@
 # BUKA BUKU
 
+Alur halaman, sumber data katalog dan berkas yang perlu diubah dijelaskan di [CODE_FLOW](docs/CODE_FLOW.md).
+
 Katalog statis berisi sembilan buku, dibuat dengan HTML dan CSS. Setiap buku memiliki sampul, judul, penulis, tanggal rilis, dan sinopsis.
 
 Seluruh isi katalog tersimpan langsung di `index.html`. Proyek ini belum memiliki pencarian, akun pengguna, keranjang, pembayaran, atau backend. Halaman situs tidak memakai JavaScript atau database dan dapat dibuka tanpa memasang dependensi.
